@@ -1,0 +1,48 @@
+schema: spec-driven
+
+context: |
+  项目：{{PROJECT_NAME}}
+  前端框架：{{FRAMEWORK}}
+  包管理器：{{PACKAGE_MANAGER}}
+  源码目录：{{SOURCE_DIR}}
+
+  项目命令：
+  - 开发：{{DEV_COMMAND}}
+  - Lint：{{LINT_COMMAND}}
+  - 测试：{{TEST_COMMAND}}
+  - 类型检查：{{TYPECHECK_COMMAND}}
+
+  Agent 修改代码前先读取：
+  - .agents/rules/00-index.md
+  - .agents/rules/90-project-overrides.md
+  - 与任务相关的通用规则和 {{FRAMEWORK}} Profile
+
+  项目约束以 .agents/rules/90-project-overrides.md 为准。缺失的项保持未定义，Agent 不自行推断。
+
+rules:
+  proposal:
+    - 使用中文撰写，说明动机、范围、非目标和受影响能力
+    - 标明是否包含 breaking change；纯重构或文档改动可使用 skip_specs
+    - 每项新增或修改的 capability 都必须对应一个 delta spec
+  specs:
+    - Requirement 使用 SHALL 或 MUST 描述可观察行为
+    - 每条 Requirement 至少包含一个 #### Scenario
+    - Scenario 使用 WHEN 和 THEN，必要时补充 AND
+    - 规格描述行为契约，不写组件名、文件路径或实现步骤
+  design:
+    - 记录约束、目标、非目标、关键决策、备选方案和风险
+    - 跨模块、公共契约、依赖变更或安全相关改动必须提供 design.md
+    - 未解决问题会改变实现结果时，先向用户确认再生成 tasks.md
+  tasks:
+    - 使用可勾选、按依赖顺序排列的原子任务
+    - 每项任务写明可观察的完成条件
+    - 包含相关测试、lint、类型检查、边界场景和回滚检查
+
+operations:
+  apply:
+    guidance:
+      - 只实现当前 change 的 tasks.md，不顺带修改范围外代码
+      - 每完成一项任务就更新对应复选框，并记录验证结果
+  archive:
+    guidance:
+      - 归档前确认实现、验证结果和 delta specs 已保持一致

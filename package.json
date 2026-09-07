@@ -1,0 +1,33 @@
+{
+  "name": "frontend-openspec-kit",
+  "version": "0.1.0",
+  "description": "Cross-agent OpenSpec standards for React and Vue projects",
+  "type": "module",
+  "bin": {
+    "frontend-openspec": "./bin/frontend-openspec.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "schemas",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check bin/frontend-openspec.mjs && node --check src/cli.mjs",
+    "test": "node --test",
+    "prepublishOnly": "pnpm run check && pnpm test"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "keywords": [
+    "openspec",
+    "react",
+    "vue",
+    "ai-agent",
+    "spec-driven-development"
+  ],
+  "license": "MIT"
+}

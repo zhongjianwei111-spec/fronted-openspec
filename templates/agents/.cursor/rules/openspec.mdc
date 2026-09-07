@@ -1,0 +1,12 @@
+---
+description: Shared frontend engineering and OpenSpec entry point
+alwaysApply: true
+---
+
+# Shared Frontend Rules
+
+Read `AGENTS.md` first. Treat `.agents/rules/` as the canonical source.
+
+Before editing, read `.agents/rules/00-index.md`, `.agents/rules/90-project-overrides.md`, the task-specific rules, and `.agents/rules/10-{{FRAMEWORK}}.md`.
+
+Use the official OpenSpec propose workflow for behavior or public-contract changes. Do not duplicate the detailed rules in Cursor-specific files.

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-openspec/project-config.schema.json",
+  "title": "Frontend OpenSpec project manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packageVersion",
+    "framework",
+    "packageManager",
+    "sourceDir",
+    "commands",
+    "managedFiles"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "packageVersion": { "type": "string" },
+    "framework": { "enum": ["react", "vue"] },
+    "packageManager": { "type": "string", "minLength": 1 },
+    "sourceDir": { "type": "string", "minLength": 1 },
+    "commands": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dev", "lint", "test", "typecheck"],
+      "properties": {
+        "dev": { "type": "string" },
+        "lint": { "type": "string" },
+        "test": { "type": "string" },
+        "typecheck": { "type": "string" }
+      }
+    },
+    "managedFiles": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    }
+  }
+}
