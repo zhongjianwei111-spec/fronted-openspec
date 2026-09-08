@@ -86,7 +86,7 @@ project/
 proposal → specs + design → tasks → apply → archive
 ```
 
-用户可观察行为、公共契约或跨模块改动需要 OpenSpec change。纯文档、工具和不改变行为的重构可以在 `.openspec.yaml` 中设置 `skip_specs: true`。
+新增或修改预期的用户可观察行为、公共契约或跨模块能力需要 OpenSpec change。局部缺陷修复如果只恢复已有规格或已经明确的预期行为，可以直接实现并完成针对性验证；诊断、纯文档、文案、样式微调和不改变行为的重构也不强制创建 change。已有相关 change 时继续使用，不重复创建提案。
 
 `openspec/config.yaml` 通过 `schema: spec-driven` 解析官方 CLI 内置 schema，本工具包不复制该 schema。两套内容分开升级：
 

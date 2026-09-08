@@ -24,4 +24,8 @@ Read only the relevant rule files. User instructions and repository-level `AGENT
 4. Validate the changed behavior with the commands configured in `90-project-overrides.md`.
 5. Report changed files, checks run, remaining risks, and any check you could not run.
 
-Use the official OpenSpec propose workflow first when the task changes observable behavior, a public contract, or several modules.
+## OpenSpec boundary
+
+Use the official OpenSpec workflow when the task introduces or changes intended observable behavior, changes a public contract, or spans several modules as one capability.
+
+Do not create an OpenSpec change solely for a localized bug fix that restores already documented or clearly established behavior. Diagnostics, pure refactors, documentation, copy, and small style-only changes also proceed directly unless the user explicitly asks for a proposal. If a relevant active OpenSpec change already exists, continue it instead of creating a duplicate.

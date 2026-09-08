@@ -1,6 +1,6 @@
 {
   "name": "frontend-openspec-kit",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "Cross-agent OpenSpec standards for React and Vue projects",
   "type": "module",
   "bin": {

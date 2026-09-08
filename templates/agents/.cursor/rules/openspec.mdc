@@ -9,4 +9,4 @@ Read `AGENTS.md` first. Treat `.agents/rules/` as the canonical source.
 
 Before editing, read `.agents/rules/00-index.md`, `.agents/rules/90-project-overrides.md`, the task-specific rules, and `.agents/rules/10-{{FRAMEWORK}}.md`.
 
-Use the official OpenSpec propose workflow for behavior or public-contract changes. Do not duplicate the detailed rules in Cursor-specific files.
+Use the OpenSpec workflow boundary defined by `00-index.md`; localized fixes that restore established behavior can proceed directly. Do not duplicate the detailed rules in Cursor-specific files.
